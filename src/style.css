@@ -81,7 +81,6 @@ h3 {
     text-align: center;
     margin-bottom: 60px;
     color: #ec6362;
-    font-weight: 300;
 }
 
 p {
@@ -138,7 +137,7 @@ p {
     z-index: 3;
     border-color: #f9dada !important;
     outline: 0;
-    box-shadow: #f9dada !important;
+    /*box-shadow: #f9dada !important;*/
 }
 
 .accordion {
@@ -176,7 +175,7 @@ p {
     /*border-style: solid;
     border-bottom-width: thin;*/
     border-bottom: 1px solid #ced4da;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     margin-bottom: 70px;
 }
 
@@ -216,10 +215,11 @@ p {
 }
 
 /*CHECKBOX*/
-.col-4 {
-    align-items: left !important;
-    justify-content: left !important;
-}
+/*.col-4 {*/
+/*    align-items: left !important;*/
+/*    justify-content: left !important;*/
+/*}*/
+
 .definizioni {
     border-style: solid;
     border-width: 1px;

@@ -105,7 +105,7 @@
 
             <h3>Tag cloud</h3>
             <div v-if="loadedImage" class="text-center">
-              <img :src="imageUrl"/>
+              <img :src="imageUrl" alt="Tag cloud" title="Tag cloud">/>
             </div>
             <div v-else class="text-center">
               Loading...
