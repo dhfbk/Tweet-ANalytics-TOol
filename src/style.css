@@ -21,6 +21,7 @@ body {
     line-height: 0.3;
     /*margin-bottom: 0px;*/
 }
+
 @media (max-width: 991px) {
     .title {
         font-size: 33px;
@@ -44,6 +45,7 @@ body {
 
     /*text-align: center;*/
 }
+
 .bigcontainer {
     justify-self: center;
     background-color: white;
@@ -69,6 +71,7 @@ h1 {
     text-align: center;
     padding-bottom: 20px;
 }
+
 h2 {
     font-family: "Rajdhani", sans-serif !important;
     font-weight: 500;
@@ -122,6 +125,7 @@ p {
     position: relative;
     float: right;
 }
+
 .accordion-button:not(.collapsed) {
     color: #ec6262 !important;
     background-color: #f9ecec;
@@ -133,6 +137,7 @@ p {
       var(--bs-accordion-border-color);
       */
 }
+
 .accordion-button:focus {
     z-index: 3;
     border-color: #f9dada !important;
@@ -152,6 +157,7 @@ p {
     padding-right: 0;
     padding-left: 0;
 }
+
 .col-img {
     width: 40px; /* Imposta la larghezza dell'immagine al 100% della larghezza della colonna genitore */
     height: auto;
@@ -167,10 +173,12 @@ p {
     /*justify-content: center;*/
     align-items: center;
 }
+
 .innercontainer {
     /*margin-left: 5px;
     margin-righr: 5px;*/
 }
+
 .topcontainer {
     /*border-style: solid;
     border-bottom-width: thin;*/
@@ -182,9 +190,11 @@ p {
 .row {
     padding-bottom: 15px;
 }
+
 .rowbetween {
     padding-bottom: 5px;
 }
+
 /*
 .col {
   background-color: yellow;
@@ -196,6 +206,7 @@ p {
     /*  padding-right: 40px;*/
     text-align: justify;
 }
+
 .colRight {
     text-align: justify;
     /*padding-left: 35px;
@@ -208,6 +219,7 @@ p {
     .colLeft {
         padding-right: 40px;
     }
+
     .colRight {
         padding-left: 35px;
         padding-right: 30px;
@@ -241,6 +253,7 @@ p {
     padding-left: 25px;
     cursor: pointer;
 }
+
 /*
 .checkbox-container.checked:before {
   content: "";
@@ -261,6 +274,7 @@ p {
 .leCheck {
     padding-left: 10px;
 }
+
 /*
 .checkbox-text {
   position: relative;

@@ -42,19 +42,19 @@
           </p>
           <template v-if="selectedLanguage">
             <template v-if="selectedLanguage in datasets">
-            <p class="pt-1">
-              Select a dataset:
-            </p>
-            <p class="pt-1">
-              <select v-model="selectedDataset" @change="loadDataset()"
-                      v-if="Object.keys(datasets[selectedLanguage]).length !== 0" class="form-select"
-                      aria-label="Select dataset">
-                <option selected value="">[Select one]</option>
-                <option :key="index" :value="index" v-for="(dataset, index) in datasets[selectedLanguage]">
-                  {{ dataset.name }}
-                </option>
-              </select>
-            </p>
+              <p class="pt-1">
+                Select a dataset:
+              </p>
+              <p class="pt-1">
+                <select v-model="selectedDataset" @change="loadDataset()"
+                        v-if="Object.keys(datasets[selectedLanguage]).length !== 0" class="form-select"
+                        aria-label="Select dataset">
+                  <option selected value="">[Select one]</option>
+                  <option :key="index" :value="index" v-for="(dataset, index) in datasets[selectedLanguage]">
+                    {{ dataset.name }}
+                  </option>
+                </select>
+              </p>
             </template>
             <template v-else>
               <p class="pt-1">

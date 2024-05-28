@@ -9,9 +9,9 @@ const routes = [
         name: 'home',
         redirect: "Know_more"
     },
-    { name: "Hands_on", path: "/Hands_on", component: Hands_on },
-    { name: "Test_yourself", path: "/Test_yourself", component: Test_yourself },
-    { name: "Know_more", path: "/Know_more", component: Know_more },
+    {name: "Hands_on", path: "/Hands_on", component: Hands_on},
+    {name: "Test_yourself", path: "/Test_yourself", component: Test_yourself},
+    {name: "Know_more", path: "/Know_more", component: Know_more},
 ]
 
 const router = createRouter({
