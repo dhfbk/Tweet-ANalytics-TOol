@@ -84,8 +84,14 @@
                 </div>
 
                 <div class="col-10">
-                  <input v-model="searchTerm" name="searchTerm" class="form-control" id="searchTerm"
-                         placeholder="Cerca parola"/>
+
+                  <div class="input-group mb-3">
+                    <input v-model="searchTerm" name="searchTerm" class="form-control" id="searchTerm"
+                           placeholder="Cerca parola"/>
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" @click="resetWord"><i
+                        class="bi bi-x"></i></button>
+                  </div>
+
                 </div>
                 <div class="col-2">
                   <button type="submit" class="btn btn-primary mb-3">Aggiorna</button>
@@ -97,31 +103,52 @@
 
             <h3>Chart</h3>
             <div class="p-3" v-if="loadedDataset">
-              <div id="vis" style="width: 100%; height: 300px;"></div>
+              <template v-if="datasetError">
+                {{ datasetError }}
+              </template>
+              <div v-else id="vis" style="width: 100%; height: 300px;"></div>
             </div>
             <div v-else class="text-center">
+              <div class="spinner-border" role="status">
+              </div>
+              <br/>
               Loading...
             </div>
 
             <h3>Tag cloud</h3>
             <div v-if="loadedImage" class="text-center">
-              <img :src="imageUrl" alt="Tag cloud" title="Tag cloud">/>
+              <template v-if="imageError">
+                {{ imageError }}
+              </template>
+              <img v-else :src="imageUrl" alt="Tag cloud" title="Tag cloud" class="tag-cloud"/>
             </div>
             <div v-else class="text-center">
+              <div class="spinner-border" role="status">
+              </div>
+              <br/>
               Loading...
             </div>
 
             <h3>Hashtag network</h3>
             <div v-if="loadedHashtag" class="text-center">
-              <iframe :srcdoc="hashtagContent" width="100%" height="500"></iframe>
+              <template v-if="hashtagError">
+                {{ hashtagError }}
+              </template>
+              <iframe v-else :srcdoc="hashtagContent" width="100%" height="500"></iframe>
             </div>
             <div v-else class="text-center">
+              <div class="spinner-border" role="status">
+              </div>
+              <br/>
               Loading...
             </div>
 
           </div>
         </div>
         <div class="col" v-else>
+          <div class="spinner-border" role="status">
+          </div>
+          <br/>
           <p>Loading...</p>
         </div>
       </div>
@@ -149,9 +176,15 @@ export default {
   data: function () {
     return {
       loaded: false,
+
       loadedDataset: false,
       loadedImage: false,
       loadedHashtag: false,
+
+      hashtagError: undefined,
+      imageError: undefined,
+      datasetError: undefined,
+
       hashtagContent: "",
       imageUrl: "",
       datasets: {},
@@ -181,10 +214,12 @@ export default {
         });
   },
   methods: {
+    resetWord: function () {
+      this.searchTerm = "";
+      this.submit();
+    },
     submit: function () {
-      this.loadedDataset = false;
-      this.loadedImage = false;
-      this.loadedHashtag = false;
+      this.reset();
 
       this.updateDataset({
         "d0": this.start_date.split('T')[0],
@@ -196,11 +231,18 @@ export default {
       this.loadedDataset = false;
       this.selectedDataset = "";
     },
-    loadDataset: function () {
-      let realThis = this;
+    reset: function () {
       this.loadedDataset = false;
       this.loadedImage = false;
       this.loadedHashtag = false;
+      this.hashtagError = undefined;
+      this.datasetError = undefined;
+      this.imageError = undefined;
+    },
+    loadDataset: function () {
+      let realThis = this;
+      this.reset();
+      this.searchTerm = "";
 
       let dataset = this.datasets[this.selectedLanguage][this.selectedDataset];
       realThis.start_date = dataset['date_start'];
@@ -214,27 +256,41 @@ export default {
     },
     updateDataset: function (pars) {
       let realThis = this;
-      axios.get(process.env.BASE_API + "/api/dataset/" + this.selectedDataset, {params: pars}).then(function (response) {
+
+      // Load chart
+      let tmpDatasetUrl = process.env.BASE_API + "/api/dataset/" + this.selectedDataset;
+      axios.get(tmpDatasetUrl, {params: pars}).then(function (response) {
         realThis.loadedDataset = true;
         vegaEmbed('#vis', response.data);
-      });
+      }).catch(function (response) {
+        realThis.datasetError = response.response.data.detail;
+      }).then(function () {
+        realThis.loadedDataset = true;
 
-      let tmpImageUrl = process.env.BASE_API + "/api/wordcloud/" + this.selectedDataset;
-      let myImage = new Image();
-      myImage.src = tmpImageUrl;
-      myImage.onload = () => {
-        realThis.imageUrl = myImage.src
-        realThis.loadedImage = true;
-      }
-      // axios.get(tmpImageUrl, {params: pars}).then(function () {
-      //   realThis.loadedImage = true;
-      //   realThis.imageUrl = tmpImageUrl;
-      // });
+        // Load network
+        let tmpHashtagUrl = process.env.BASE_API + "/api/hashtag/" + realThis.selectedDataset;
+        axios.get(tmpHashtagUrl, {params: pars}).then(function (response) {
+          realThis.hashtagContent = response.data;
+        }).catch(function (response) {
+          realThis.hashtagError = response.response.data.detail;
+        }).then(function () {
+          realThis.loadedHashtag = true;
+        });
 
-      let tmpHashtagUrl = process.env.BASE_API + "/api/hashtag/" + this.selectedDataset;
-      axios.get(tmpHashtagUrl, {params: pars}).then(function (response) {
-        realThis.loadedHashtag = true;
-        realThis.hashtagContent = response.data;
+        // Load word cloud
+        let tmpImageUrl = process.env.BASE_API + "/api/wordcloud/" + realThis.selectedDataset;
+        const myUrlWithParams = new URL(tmpImageUrl);
+        for (let p in pars) {
+          myUrlWithParams.searchParams.append(p, pars[p]);
+        }
+
+        let myImage = new Image();
+        myImage.src = myUrlWithParams.href;
+        myImage.onload = () => {
+          realThis.imageUrl = myImage.src
+          realThis.loadedImage = true;
+        }
+
       });
 
     }
@@ -246,5 +302,9 @@ export default {
 h3 {
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.tag-cloud {
+  max-width: 100%;
 }
 </style>
