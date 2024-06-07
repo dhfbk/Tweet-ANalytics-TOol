@@ -1,0 +1,6 @@
+rosa #e56a69 rgb(229,106,105)
+
+grigio chiaro #ebe1e1 rgb(235,225,225)
+grigio scuro #565656
+
+

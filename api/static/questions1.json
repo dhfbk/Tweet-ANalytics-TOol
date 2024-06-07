@@ -1,0 +1,34 @@
+[
+	{
+	"q": "What is a social media?",
+	"r": "Social media (from \"medium\", which in Latin means \"means, tool\") are means of communication that make it possible to create, share and exchange user-generated content through the use of web-based applications. Users create profiles specific to the website or app, which are designed and maintained by the social media organization. Social media allow users to share  content, which can spread thanks to the connections among user profiles."
+	},
+	{
+    "q": "What is the difference between social media and social networks?",
+    "r": "Although the two terms are commonly used as synonyms, they actually refer to two  different concepts. \"Social network\" is an expression belonging to the sociological field, while \"social media\" is a concept from the IT field. A social network is a group of people, while social media are a software. By social network we refer to the network made up of users who share interests and passions with each other. While a social media is a physical tool, app or software,  a social network comprises the group of people who use social media to create their own network of online communities. The expression Social network is now used to refer to social network sites, i.e. platforms that enable forms of online sociality."
+    },
+	{
+    "q": "Can you mention the most popular social media?",
+    "r": "Examples of social media include platforms such as Facebook, X (\"Twitter\"), Instagram, Pinterest, Youtube. Also collaborative projects like Wikipedia and virtual realities in games (for example Age of Empires) are considered social media."
+    },
+    {
+    "q": "How does a social media work?",
+    "r": "Social media allow users to create and share content such as photos, videos, blog posts and links with their network of contacts, friends and followers. Content created by a user can be shared by his or her network of contacts, thus making it spread quickly among large groups of people. The main characteristic of social media is their horizontality in the creation and dissemination of content: all users have the possibility of creating new content and anyone can modify and redistribute it. Each social media has its own specific rules."
+    },
+    {
+    "q": "Are social media safe? What are their main risks?",
+    "r": "Social media are very useful and interesting tools, but they are not always safe and they can be related to various types of dangers. One of the main risks associated with social media is the risk of cyberbullying, which can be very harmful for the victims. The personal data you share on social media can be used by third parties without your permission, resulting in a violation of your privacy. Social media also pose a mental health risk, as they can lead to addiction, anxiety and depression. Other risks include identity theft and other online scams. Finally, social media can be used as a platform by malicious actors to spread misinformation and propagate false news."
+	},
+    {
+    "q": "What are the actions that you can undertake to limit the risks you are exposed to through social media?",
+    "r": "<ul><li>Be careful with what you post and share online.</li><li>Disable the possibility for others to tag you in posts and pictures without your consent.</li><li>Limit or disable your localisation settings.</li><li>Do not accept friendship requests from unknown users.</li><li>Use two-step verification for advanced privacy and keep your passwords and recovery information up-to-date.</li><li>Check your privacy settings frequently and who can see your profile and posts.</li><li>Think before clicking!</li><li>Don't click on suspicious links or open attachments from unknown senders.</li><li>Don't leave your profile open to the public.</li><li>Don't respond to hostile or abusive comments. Don't argue with trolls or engage in flame wars.</li><li>Don't post anything that could make you vulnerable to identity theft (for example photos of documents, plane tickets, etc.).</li><li>Do not share sensitive and private information.</li></ul>"
+    },
+    {
+    "q": "What actions can be taken to make social media a safer space for everyone?",
+    "r": "<ul><li>Avoid posting offensive or inflammatory comments, and always respond with kindness.</li><li>Respect the opinions and points of view of others, even if they differ from your own.</li><li>If you come across content that you believe is abusive, you can report it and ask for it to be removed. Check the standards of the platform you are using to understand if the content violates its rules.</li><li>Don't spread information about a person or event that you aren't sure about.</li><li>Avoid getting drawn into long discussions, especially with people who have nothing better to do than provoke online.</li><li>Before sharing content, think about who it could impact.</li></ul>"
+	},
+    {
+    "q": "How to properly interact with people online?",
+    "r": "Be assertive rather than aggressive: share your ideas in a clear and direct but respectful way. Always remember that there is a person behind the screen. If you are discussing the content of a text, make sure you know it before starting to argue. Stay (and invite others to stay) on topic. If you decide to intervene, for example to defend someone from a hater, remember not to attack with \"counter-hatred\" (you would legitimize the use of this kind of language), and to leverage positive and inclusive messages. Usually it is not useful to try to change the minds of the haters, but rather of those who follow them. A good way to tell if your intervention was positive is to observe a decrease in tone and aggression as the conversation progresses."
+    }
+]

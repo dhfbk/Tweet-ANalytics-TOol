@@ -1,0 +1,25 @@
+[
+    {
+        "q": "Which of the following actions can you take to improve your safety and well-being on social media?",
+        "a": [
+            {"c": false, "t": "Click on everything I see."},
+            {"c": false, "t": "Accept friendship requests from anyone."},
+            {"c": false, "t": "Start long discussions with unknown users that make me angry."},
+            {"c": true, "t": "Share personal information only with users that I know I can trust."},
+            {"c": false, "t": "Never take a break from social media."},
+            {"c": true, "t": "Use safe verification methods for accessing my account."},
+            {"c": true, "t": "Delete from my contacts users that make inappropriate comments."},
+            {"c": true, "t": "Report online bullying."},
+            {"c": true, "t": "Check who can see the contents I post online."}
+        ]
+    },
+    {
+        "q": "Which of the following behaviors can you adopt to make social media a safer and more enjoyable place for everyone?",
+        "a": [
+            {"c": true, "t": "Reply with kindness."},
+            {"c": true, "t": "Refrain from spreading information that I am not sure is true."},
+            {"c": true, "t": "Post or share private or confidential information about others."},
+            {"c": true, "t": "Report a post if it has inappropriate content."}
+        ]
+    }
+]
