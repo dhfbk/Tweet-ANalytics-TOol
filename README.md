@@ -1,4 +1,4 @@
-# StandByMe 2.0 platform
+# Tweet-ANalytics-TOol (TANTO)
 
 This code contains all the source code to build and use the platform developed during the project [StandByMe 2.0](https://www.standbymeproject.eu/stand-by-me-2-0/) (Top gender-bAsed violeNce by aDdressing masculinities and changing Behaviour of Young people through huMan rights Education, CERV-2021-DAPHNE, proposal n. 101049386).
 
